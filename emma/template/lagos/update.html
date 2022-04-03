@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body class = "win"  >
+    <div>
+        {% block content %}
+        <h1>Add Your Post</h1>
+        <form enctype="multipart/form-data" action="" method="POST">{% csrf_token %}
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Update Title</label>
+                <input type="text" name="title" class="form-control" value="{{obj.title}}" >
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Update Description</label>
+                <input type="text" name="description" class="form-control" value="{{obj.description}}" >
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Update Body</label>
+                <textarea class="form-control" name="body" id="exampleFormControlTextarea1" value="{{obj.body}}"rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Update Category</label>
+                <input type="text" name="category" class="form-control" value="{{obj.category}}">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Update Image:</label>
+                <input type="file" name="images" value="{{obj.file}}">
+            </div>
+            
+            <button class="btn btn-success">Submit</button> 
+        </form>
+        {% endblock %}
+    </div>   
+</body>
+</html>
+

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body class = "win"  >
+    <div style="background-color: gray;">
+        {% block content %}
+        <h1>Add Your Post</h1>
+        <form enctype="multipart/form-data" action="" method="POST">{% csrf_token %}
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Title</label>
+                <input type="text" name="title" class="form-control"  >
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Description</label>
+                <input type="text" name="description" class="form-control"  >
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label"> Body</label>
+                <textarea class="form-control" name="body" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Author</label>
+                <input type="text" name="author" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Category</label>
+                <input type="text" name="category" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Choose Image to Add:</label>
+                <input type="file" name="images">
+            </div>
+            
+            <button class="btn btn-success">Submit</button> 
+
+            <script type="text/javascript" src='{% static "ckeditor/ckeditor-init.js" %}'></script>
+            <script type="text/javascript" src='{% static "ckeditor/ckeditor/ckeditor.js" %}'></script>
+
+        </form>
+        {% endblock %}
+    </div>   
+</body>
+</html>
+
+
+
+ <!-- <div class="row">
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+               
+                    </div>
+                </div>
+            </div> -->
+            <!-- <img src="{{ static }}/photos/image.png" alt="image" />
+
+            {% if p.image %}
+           
+                <img src="{{ p.image.url }}" alt="" class="prod-size">
+            
+        {% else %}
+            <td>
+                <img src="" alt="" class="prod-size">
+            </td>
+        {% endif %} -->
+
+    <!-- <input type="submit" value="upload"> -->

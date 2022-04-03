@@ -1,0 +1,9 @@
+{% block content %}
+<br><br>
+<form action="" method="POST">{% csrf_token %}
+    <h3>Are you sure you want to delete this solution</h3>
+    <h4><i>{{obj}}</i>?</h4>
+    <button class="btn btn-success"><a href="{% url 'home' %}">Go back</a></button>
+    <input type="submit" name="delete" value="Delete">
+</form>
+{% endblock %}
